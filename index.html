@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aakaara Studios NYC — Crafting Love Into Art</title>
+<meta name="description" content="Aakaara Studios NYC — Wedding, couple, maternity & celebration photography in New York City. Crafting Love Into Art.">
+<meta property="og:title" content="Aakaara Studios NYC — Crafting Love Into Art">
+<meta property="og:description" content="Wedding & portrait photography in New York City — Giving Shape to What You Feel">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Noto+Sans+Telugu:wght@300;400&family=Noto+Sans+Devanagari:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   VARIABLES & RESET
+   ═══════════════════════════════════════ */
+:root {
+  --noir: #09080b;
+  --umber: #1e1a16;
+  --rose: #c9956b;
+  --rose-light: #dbb08a;
+  --blush: #e8c4a8;
+  --champagne: #f2e6d9;
+  --ivory: #faf6f1;
+  --parch: #f0ebe4;
+  --wine: #7a3b4e;
+  --mauve: #9b7082;
+  --sage: #8a9a7e;
+  --saffron: #e0a458;
+  --font-display: 'Cormorant Garamond', 'Garamond', 'Georgia', serif;
+  --font-body: 'Outfit', 'Helvetica Neue', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  background: var(--ivory); color: var(--umber);
+  font-family: var(--font-body); font-weight: 300;
+  line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { border: none; cursor: pointer; font-family: inherit; background: none; }
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1.4rem 3.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.6s var(--ease-smooth);
+}
+nav.scrolled {
+  background: rgba(9,8,11,0.92); backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 0.7rem 3.5rem;
+  box-shadow: 0 1px 40px rgba(0,0,0,0.3);
+}
+.nav-logo { display: flex; align-items: center; gap: 0.9rem; }
+.nav-logo svg { height: 30px; width: auto; }
+.nav-logo-text {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 1.3rem; color: #faf6f1; letter-spacing: 0.06em;
+  position: relative;
+}
+.nav-logo-text .v-dots {
+  position: absolute; top: -7px; left: 2px;
+  display: flex; gap: 4px;
+}
+.nav-logo-text .v-dots span {
+  width: 3.5px; height: 3.5px; border-radius: 50%;
+  background: var(--rose); opacity: 0.8;
+}
+.nav-links { display: flex; gap: 2.2rem; align-items: center; }
+.nav-links a {
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(250,246,241,0.5); font-weight: 300;
+  transition: color 0.4s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+  background: var(--rose); transition: width 0.5s var(--ease);
+}
+.nav-links a:hover { color: var(--rose); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--noir); background: var(--rose);
+  padding: 0.6rem 1.5rem; border-radius: 2px; font-weight: 400;
+  transition: all 0.4s;
+}
+.nav-cta:hover { background: var(--rose-light); transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+.nav-toggle span { width: 22px; height: 1.5px; background: var(--ivory); transition: all 0.3s; }
+
+/* ═══════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(170deg, #09080b 0%, #1e1a16 35%, #141218 70%, #09080b 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; text-align: center; padding: 2rem;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 45%, rgba(201,149,107,0.04), transparent 70%);
+}
+.hero::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(to bottom, transparent, var(--ivory));
+}
+.hero-grain {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.5; pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-mark { margin-bottom: 2.5rem; }
+.hero-mark svg { width: 110px; height: 110px; }
+@keyframes subtleSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.hero-mark .outer-ring { animation: subtleSpin 90s linear infinite; transform-origin: center; }
+.hero-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(3.5rem, 8vw, 7rem); color: #faf6f1;
+  letter-spacing: 0.08em; line-height: 1.1; margin-bottom: 0.5rem; position: relative;
+}
+.hero-title .v-dots {
+  position: absolute; top: -0.12em; left: 0.02em;
+  display: flex; gap: 0.14em;
+}
+.hero-title .v-dots span {
+  width: 0.09em; height: 0.09em; border-radius: 50%;
+  background: var(--rose); opacity: 0.85;
+}
+.hero-subtitle {
+  font-family: var(--font-body); font-weight: 200; font-size: 0.65rem;
+  color: var(--rose); letter-spacing: 0.5em; text-transform: uppercase; margin-bottom: 2rem;
+}
+.hero-tagline {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: rgba(232,196,168,0.45); letter-spacing: 0.04em; margin-bottom: 3rem;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 1rem;
+  font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ivory); font-weight: 300; padding: 1rem 2.5rem;
+  border: 1px solid rgba(201,149,107,0.25);
+  transition: all 0.5s var(--ease);
+}
+.hero-cta:hover {
+  background: rgba(201,149,107,0.08); border-color: var(--rose); transform: translateY(-2px);
+}
+.hero-cta .arrow { transition: transform 0.4s var(--ease); }
+.hero-cta:hover .arrow { transform: translateX(4px); }
+.hero-scroll {
+  position: absolute; bottom: 100px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+}
+.hero-scroll span {
+  font-size: 0.5rem; letter-spacing: 0.4em; text-transform: uppercase;
+  color: rgba(250,246,241,0.2);
+}
+.scroll-line { width: 1px; height: 35px; position: relative; overflow: hidden; background: rgba(201,149,107,0.08); }
+.scroll-line::after {
+  content: ''; position: absolute; top: -100%; left: 0; width: 1px; height: 100%;
+  background: var(--rose); animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0% { top: -100%; } 50% { top: 100%; } 100% { top: 100%; } }
+
+/* Reveal / animations */
+@keyframes heroReveal { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+.hero-content > * { animation: heroReveal 1.8s var(--ease) both; }
+.hero-mark { animation-delay: 0.1s; }
+.hero-title { animation-delay: 0.3s; }
+.hero-subtitle { animation-delay: 0.5s; }
+.hero-tagline { animation-delay: 0.7s; }
+.hero-cta { animation-delay: 0.9s; }
+.hero-scroll { animation: heroReveal 1.8s var(--ease) 1.1s both; }
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════
+   SECTIONS
+   ═══════════════════════════════════════ */
+.section { padding: 7rem 3.5rem; position: relative; }
+.section-dark { background: linear-gradient(170deg, #0e0c10, #1e1a16 50%, #0e0c10); color: var(--ivory); }
+.section-warm { background: var(--champagne); }
+.container { max-width: 1140px; margin: 0 auto; }
+.section-tag {
+  font-size: 0.58rem; letter-spacing: 0.5em;
+  text-transform: uppercase; color: var(--rose); margin-bottom: 1rem;
+}
+.section-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem); letter-spacing: 0.04em;
+  line-height: 1.2; margin-bottom: 1rem;
+}
+.section-desc {
+  font-size: 0.88rem; color: rgba(30,26,22,0.45); max-width: 520px;
+  line-height: 1.85; margin-bottom: 3rem;
+}
+.section-dark .section-desc { color: rgba(250,246,241,0.35); }
+
+/* ═══════════════════════════════════════
+   PORTFOLIO GALLERY
+   ═══════════════════════════════════════ */
+.portfolio-filters { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.portfolio-filters button {
+  font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(30,26,22,0.35); font-weight: 300;
+  padding: 0.5rem 1.2rem; border: 1px solid rgba(30,26,22,0.08);
+  border-radius: 2px; transition: all 0.4s;
+}
+.portfolio-filters button:hover,
+.portfolio-filters button.active {
+  color: var(--ivory); background: var(--umber); border-color: var(--umber);
+}
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.gallery-item {
+  position: relative; overflow: hidden; border-radius: 4px;
+  cursor: pointer; aspect-ratio: 4/5; background: var(--parch);
+  transition: transform 0.6s var(--ease);
+}
+.gallery-item:hover { transform: translateY(-4px); }
+.gallery-item.wide { grid-column: span 2; aspect-ratio: 8/5; }
+.gallery-item .gi-bg {
+  position: absolute; inset: 0; transition: transform 1s var(--ease);
+}
+.gallery-item:hover .gi-bg { transform: scale(1.04); }
+.gallery-item .gi-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(9,8,11,0.75), transparent 50%);
+  opacity: 0; transition: opacity 0.5s;
+  display: flex; align-items: flex-end; padding: 1.5rem;
+}
+.gallery-item:hover .gi-overlay { opacity: 1; }
+.gi-overlay h4 {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 1.15rem; color: var(--ivory); letter-spacing: 0.04em;
+}
+.gi-overlay p {
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--rose); margin-top: 0.25rem;
+}
+/* Placeholder backgrounds */
+.gi-1 .gi-bg { background: linear-gradient(135deg, #d4a574, #8b6f5c, #c9956b); }
+.gi-2 .gi-bg { background: linear-gradient(135deg, #b8967a, #7a3b4e, #dbb08a); }
+.gi-3 .gi-bg { background: linear-gradient(135deg, #9b7082, #c9956b, #e8c4a8); }
+.gi-4 .gi-bg { background: linear-gradient(135deg, #8a9a7e, #c9956b, #f0ebe4); }
+.gi-5 .gi-bg { background: linear-gradient(135deg, #7a3b4e, #1e1a16, #c9956b); }
+.gi-6 .gi-bg { background: linear-gradient(135deg, #dbb08a, #9b7082, #c9956b); }
+.gi-7 .gi-bg { background: linear-gradient(135deg, #c9956b, #1e1a16, #7a3b4e); }
+.gi-8 .gi-bg { background: linear-gradient(135deg, #e8c4a8, #8a9a7e, #c9956b); }
+
+/* ═══════════════════════════════════════
+   NYC PORTRAITS — Interactive
+   ═══════════════════════════════════════ */
+#nyc { overflow: hidden; }
+.nyc-skyline {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 250px; pointer-events: none;
+  opacity: 0; transition: opacity 1.5s var(--ease-smooth);
+}
+#nyc.visible .nyc-skyline { opacity: 1; }
+
+.nyc-content { position: relative; z-index: 2; }
+.nyc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+
+.nyc-list { display: flex; flex-direction: column; gap: 0; }
+.nyc-loc {
+  padding: 1.5rem 0; border-bottom: 1px solid rgba(201,149,107,0.06);
+  cursor: pointer; transition: all 0.4s;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nyc-loc:hover { padding-left: 1rem; }
+.nyc-loc-left { display: flex; align-items: center; gap: 1.2rem; }
+.nyc-loc .num {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 300;
+  color: var(--rose); opacity: 0.2; min-width: 40px;
+  transition: opacity 0.4s;
+}
+.nyc-loc:hover .num { opacity: 0.6; }
+.nyc-loc h4 {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 1.3rem; color: var(--ivory); letter-spacing: 0.03em;
+  transition: color 0.3s;
+}
+.nyc-loc:hover h4 { color: var(--rose); }
+.nyc-loc .nyc-sub {
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(250,246,241,0.2); margin-top: 0.15rem;
+}
+.nyc-loc .nyc-arrow {
+  opacity: 0; transform: translateX(-8px); transition: all 0.4s var(--ease);
+}
+.nyc-loc:hover .nyc-arrow { opacity: 0.5; transform: translateX(0); }
+
+.nyc-preview {
+  position: sticky; top: 120px;
+  aspect-ratio: 3/4; border-radius: 6px; overflow: hidden;
+  background: rgba(30,26,22,0.4);
+  border: 1px solid rgba(201,149,107,0.06);
+}
+.nyc-preview-img {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity 0.6s var(--ease-smooth);
+  display: flex; align-items: flex-end; padding: 1.5rem;
+}
+.nyc-preview-img.active { opacity: 1; }
+.nyc-preview-img .preview-bg { position: absolute; inset: 0; }
+.nyc-preview-info {
+  position: relative; z-index: 2; width: 100%;
+}
+.nyc-preview-info h5 {
+  font-family: var(--font-display); font-size: 1.3rem;
+  font-weight: 300; color: var(--ivory); margin-bottom: 0.3rem;
+}
+.nyc-preview-info .tag-line {
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--rose); opacity: 0.7; margin-bottom: 0.7rem;
+}
+.nyc-maps-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--ivory); padding: 0.45rem 1rem;
+  border: 1px solid rgba(250,246,241,0.15); border-radius: 2px;
+  transition: all 0.3s;
+}
+.nyc-maps-link:hover { border-color: var(--rose); background: rgba(201,149,107,0.1); }
+.nyc-maps-link svg { width: 12px; height: 12px; }
+
+/* NYC placeholder bgs */
+.nyc-cp .preview-bg { background: linear-gradient(145deg, #4a6741, #8a9a7e, #c9956b, #dbb08a); }
+.nyc-dumbo .preview-bg { background: linear-gradient(145deg, #3a3540, #7a3b4e, #c9956b, #e8c4a8); }
+.nyc-bb .preview-bg { background: linear-gradient(145deg, #2a2832, #6b7280, #c9956b, #faf6f1); }
+.nyc-sub .preview-bg { background: linear-gradient(145deg, #1e1a16, #3a3530, #c9956b, #7a3b4e); }
+.nyc-lib .preview-bg { background: linear-gradient(145deg, #d4c5b0, #c9956b, #7a3b4e, #1e1a16); }
+.nyc-st .preview-bg { background: linear-gradient(145deg, #09080b, #2a2832, #c9956b, #e8c4a8); }
+
+/* ═══════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════ */
+.about-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 5rem; align-items: center; }
+.about-image {
+  aspect-ratio: 3/4; border-radius: 6px; max-height: 420px;
+  background: linear-gradient(145deg, var(--rose), var(--wine), var(--umber));
+  position: relative; overflow: hidden;
+}
+.about-image::after {
+  content: ''; position: absolute; inset: 10px;
+  border: 1px solid rgba(250,246,241,0.08); border-radius: 3px;
+}
+.about-text .section-title { margin-bottom: 1.5rem; }
+.about-text p { font-size: 0.88rem; line-height: 1.95; color: rgba(30,26,22,0.5); margin-bottom: 1.1rem; }
+.about-sanskrit {
+  font-size: 1.15rem; margin-top: 2rem; letter-spacing: 0.06em;
+  line-height: 2;
+}
+.about-sanskrit .telugu {
+  font-family: 'Noto Sans Telugu', sans-serif;
+  color: var(--saffron); font-weight: 400;
+}
+.about-sanskrit .devnag {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  color: var(--wine); font-weight: 400;
+}
+.about-sanskrit .english {
+  font-family: var(--font-display); font-style: italic;
+  color: var(--rose); font-weight: 400;
+}
+.about-stats {
+  display: flex; gap: 3rem; margin-top: 2.5rem;
+  padding-top: 2rem; border-top: 1px solid rgba(30,26,22,0.06);
+}
+.about-stats .stat h4 {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 2.2rem; color: var(--rose); line-height: 1;
+}
+.about-stats .stat p {
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(30,26,22,0.3); margin: 0.3rem 0 0;
+}
+
+/* ═══════════════════════════════════════
+   SERVICES
+   ═══════════════════════════════════════ */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.service-card {
+  background: rgba(250,246,241,0.6); border: 1px solid rgba(30,26,22,0.03);
+  border-radius: 8px; padding: 2.5rem 2rem; text-align: center;
+  transition: all 0.5s var(--ease); position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: var(--rose); opacity: 0; transition: opacity 0.4s;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 25px 60px rgba(30,26,22,0.06); }
+.service-card:hover::before { opacity: 1; }
+.service-icon { margin: 0 auto 1.5rem; width: 56px; height: 56px; }
+.service-icon svg { width: 56px; height: 56px; }
+.service-card h4 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 1.25rem; margin-bottom: 0.6rem; letter-spacing: 0.02em;
+}
+.service-card p {
+  font-size: 0.8rem; color: rgba(30,26,22,0.4); line-height: 1.7;
+}
+/* Celebrations sub-categories */
+.celebrations-subs {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; margin-top: 1rem;
+}
+.celebrations-subs span {
+  font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.3rem 0.8rem; border-radius: 20px;
+  border: 1px solid rgba(201,149,107,0.2); color: var(--rose); opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════ */
+.testimonials-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
+.testimonial-card {
+  background: rgba(30,26,22,0.35); border: 1px solid rgba(201,149,107,0.05);
+  border-radius: 8px; padding: 2.5rem; transition: transform 0.5s var(--ease);
+}
+.testimonial-card:hover { transform: translateY(-3px); }
+.testimonial-stars { display: flex; gap: 3px; margin-bottom: 1.2rem; }
+.testimonial-stars svg { width: 13px; height: 13px; fill: var(--rose); opacity: 0.6; }
+.testimonial-card blockquote {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 1rem; line-height: 1.85; color: rgba(250,246,241,0.5); margin-bottom: 1.5rem;
+}
+.testimonial-author { display: flex; align-items: center; gap: 1rem; }
+.testimonial-avatar {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--rose), var(--wine)); flex-shrink: 0;
+}
+.testimonial-author h5 { font-weight: 400; font-size: 0.82rem; color: var(--ivory); }
+.testimonial-author p { font-size: 0.65rem; color: rgba(250,246,241,0.25); letter-spacing: 0.08em; }
+
+/* ═══════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════ */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-info h3 { font-family: var(--font-display); font-weight: 300; font-size: 1.7rem; margin-bottom: 1.5rem; }
+.contact-info p { font-size: 0.85rem; color: rgba(30,26,22,0.45); line-height: 1.85; margin-bottom: 2rem; }
+.contact-details { display: flex; flex-direction: column; gap: 1rem; }
+.contact-detail { display: flex; align-items: center; gap: 1rem; }
+.cd-icon {
+  width: 38px; height: 38px;
+  border: 1px solid rgba(201,149,107,0.12); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cd-icon svg { width: 15px; height: 15px; }
+.contact-detail h5 { font-weight: 400; font-size: 0.82rem; }
+.contact-detail p { font-size: 0.75rem; color: rgba(30,26,22,0.35); margin: 0; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-group label {
+  font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(30,26,22,0.35); font-weight: 400;
+}
+.form-group input, .form-group select, .form-group textarea {
+  font-family: var(--font-body); font-weight: 300; font-size: 0.85rem;
+  padding: 0.85rem 1.1rem; border: 1px solid rgba(30,26,22,0.06);
+  border-radius: 3px; background: rgba(250,246,241,0.4);
+  color: var(--umber); transition: border-color 0.3s; outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--rose); }
+.form-group textarea { resize: vertical; min-height: 110px; }
+.form-submit {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ivory); background: var(--umber);
+  padding: 1rem 2.2rem; border-radius: 3px; font-weight: 400;
+  transition: all 0.4s; align-self: flex-start;
+}
+.form-submit:hover { background: var(--rose); transform: translateY(-2px); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+footer {
+  background: var(--noir); color: var(--ivory); padding: 5rem 3.5rem 2.5rem;
+  position: relative;
+}
+footer::before {
+  content: ''; position: absolute; top: 0; left: 10%; right: 10%;
+  height: 1px; background: linear-gradient(90deg, transparent, rgba(201,149,107,0.12), transparent);
+}
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+.footer-brand svg { width: 45px; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.8rem; color: rgba(250,246,241,0.3); line-height: 1.7; max-width: 260px; }
+.footer-col h5 {
+  font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--rose); margin-bottom: 1.2rem; font-weight: 400;
+}
+.footer-col a {
+  display: block; font-size: 0.8rem; color: rgba(250,246,241,0.35);
+  margin-bottom: 0.6rem; transition: color 0.3s;
+}
+.footer-col a:hover { color: var(--rose); }
+.footer-bottom {
+  border-top: 1px solid rgba(250,246,241,0.03); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 0.65rem; color: rgba(250,246,241,0.15); letter-spacing: 0.08em; }
+.footer-social { display: flex; gap: 1rem; }
+.footer-social a {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid rgba(250,246,241,0.05);
+  display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+}
+.footer-social a:hover { border-color: var(--rose); background: rgba(201,149,107,0.08); }
+.footer-social a svg { width: 14px; height: 14px; fill: rgba(250,246,241,0.35); }
+.footer-social a:hover svg { fill: var(--rose); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item.wide { grid-column: span 1; aspect-ratio: 4/5; }
+  .nyc-layout { grid-template-columns: 1fr; }
+  .nyc-preview { display: none; }
+  .nyc-loc h4 { font-size: 1.1rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.6rem 1.5rem; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .section { padding: 4rem 1.5rem; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-image { max-height: 300px; }
+  .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .about-stats { gap: 2rem; }
+}
+.nav-links.show {
+  display: flex !important; flex-direction: column;
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: rgba(9,8,11,0.95); backdrop-filter: blur(20px);
+  padding: 2rem; gap: 1.5rem;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 60 60"><g transform="translate(30,30)"><path d="M0,-22 C6,-22 11,-15 9,-4 C7,6 -3,9 -9,4 C-15,-1 -11,-16 -4,-21 C-3,-21.7 -1,-22 0,-22Z" fill="none" stroke="#c9956b" stroke-width="1.2" opacity="0.8"/><path d="M0,-22 C6,-22 11,-15 9,-4 C7,6 -3,9 -9,4 C-15,-1 -11,-16 -4,-21 C-3,-21.7 -1,-22 0,-22Z" fill="none" stroke="#c9956b" stroke-width="1.2" opacity="0.4" transform="rotate(60)"/><path d="M0,-22 C6,-22 11,-15 9,-4 C7,6 -3,9 -9,4 C-15,-1 -11,-16 -4,-21 C-3,-21.7 -1,-22 0,-22Z" fill="none" stroke="#c9956b" stroke-width="1.2" opacity="0.2" transform="rotate(120)"/><circle cx="0" cy="0" r="2.5" fill="#c9956b" opacity="0.85"/></g></svg>
+    <span class="nav-logo-text"><span class="v-dots"><span></span><span></span></span>Aakaara</span>
+  </a>
+  <div class="nav-links">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#nyc">NYC Portraits</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Kind Words</a>
+    <a href="#contact" class="nav-cta">Book a Session</a>
+  </div>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <div class="hero-mark">
+      <svg viewBox="0 0 140 140"><g class="outer-ring"><circle cx="70" cy="70" r="64" fill="none" stroke="rgba(201,149,107,0.08)" stroke-width="0.5"/></g><g transform="translate(70,70)"><path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#c9956b" stroke-width="1.5" opacity="0.85"/><path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#c9956b" stroke-width="1.5" opacity="0.5" transform="rotate(60)"/><path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#c9956b" stroke-width="1.5" opacity="0.28" transform="rotate(120)"/><path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#c9956b" stroke-width="1.5" opacity="0.12" transform="rotate(180)"/><circle cx="0" cy="0" r="5" fill="#c9956b" opacity="0.85"/></g></svg>
+    </div>
+    <h1 class="hero-title"><span class="v-dots"><span></span><span></span></span>Aakaara</h1>
+    <div class="hero-subtitle">Studios · New York City</div>
+    <div class="hero-tagline">Crafting Love Into Art</div>
+    <a href="#portfolio" class="hero-cta">View Our Work <svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ════════════════════ PORTFOLIO ════════════════════ -->
+<section class="section" id="portfolio">
+  <div class="container reveal">
+    <div class="section-tag">Our Work</div>
+    <div class="section-title">Selected Stories</div>
+    <div class="section-desc">Every frame holds a universe of emotion. Browse our curated collections across weddings, couples, maternity, celebrations, and conceptual work.</div>
+    <div class="portfolio-filters">
+      <button class="active" onclick="filterGallery('all', this)">All</button>
+      <button onclick="filterGallery('wedding', this)">Weddings</button>
+      <button onclick="filterGallery('couple', this)">Couples</button>
+      <button onclick="filterGallery('maternity', this)">Maternity</button>
+      <button onclick="filterGallery('celebration', this)">Celebrations</button>
+      <button onclick="filterGallery('commercial', this)">Commercial</button>
+      <button onclick="filterGallery('conceptual', this)">Conceptual</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item wide gi-1" data-cat="wedding"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Priya & Arjun</h4><p>Wedding · The Pierre, NYC</p></div></div></div>
+      <div class="gallery-item gi-2" data-cat="couple"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Maya & James</h4><p>Couple Portrait · Central Park</p></div></div></div>
+      <div class="gallery-item gi-3" data-cat="maternity"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Anjali</h4><p>Maternity · Golden Hour</p></div></div></div>
+      <div class="gallery-item gi-4" data-cat="celebration"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>The Sharma Family</h4><p>Baby Shower · Brooklyn</p></div></div></div>
+      <div class="gallery-item gi-5" data-cat="wedding"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Lakshmi & Dev</h4><p>Wedding · Oheka Castle</p></div></div></div>
+      <div class="gallery-item wide gi-6" data-cat="conceptual"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Ethereal</h4><p>Conceptual · Studio Session</p></div></div></div>
+      <div class="gallery-item gi-7" data-cat="commercial"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Lumina Jewelry</h4><p>Commercial · Product Campaign</p></div></div></div>
+      <div class="gallery-item gi-8" data-cat="couple"><div class="gi-bg"></div><div class="gi-overlay"><div><h4>Sarah & Vikram</h4><p>Pre-Wedding · DUMBO</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ NYC PORTRAITS ════════════════════ -->
+<section class="section section-dark" id="nyc">
+  <!-- Skyline sketch -->
+  <svg class="nyc-skyline" viewBox="0 0 1200 250" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,250 L0,200 L30,200 L30,160 L45,160 L45,140 L55,140 L55,130 L60,110 L65,130 L70,130 L70,150 L85,150 L85,120 L95,120 L95,100 L100,80 L105,100 L110,100 L110,130 L130,130 L130,170 L150,170 L150,140 L160,140 L160,90 L165,70 L170,50 L175,70 L180,90 L185,90 L185,60 L190,40 L195,30 L200,40 L205,60 L210,60 L210,100 L220,100 L220,130 L240,130 L240,160 L260,160 L260,110 L270,110 L270,80 L280,60 L285,40 L290,20 L295,40 L300,60 L310,80 L310,110 L320,110 L320,140 L340,140 L340,120 L360,120 L360,100 L380,100 L380,60 L385,40 L390,25 L395,10 L400,25 L405,40 L410,60 L415,80 L420,80 L420,100 L440,100 L440,130 L460,130 L460,90 L465,70 L470,50 L475,35 L480,50 L485,70 L490,90 L500,90 L500,110 L520,110 L520,140 L540,140 L540,100 L550,80 L555,60 L560,45 L565,30 L570,15 L575,30 L580,45 L585,60 L590,80 L600,100 L610,100 L610,120 L630,120 L630,150 L660,150 L660,130 L680,130 L680,100 L700,100 L700,70 L710,50 L720,35 L730,50 L740,70 L750,100 L760,100 L760,130 L780,130 L780,160 L800,160 L800,140 L820,140 L820,110 L840,110 L840,80 L850,60 L860,80 L870,110 L880,110 L880,140 L900,140 L900,120 L920,120 L920,150 L940,150 L940,170 L960,170 L960,150 L980,150 L980,130 L1000,130 L1000,160 L1020,160 L1020,180 L1050,180 L1050,160 L1080,160 L1080,180 L1100,180 L1100,190 L1120,190 L1120,200 L1150,200 L1150,190 L1180,190 L1180,210 L1200,210 L1200,250 Z" fill="none" stroke="rgba(201,149,107,0.06)" stroke-width="1"/>
+  </svg>
+
+  <div class="container nyc-content">
+    <div class="reveal">
+      <div class="section-tag">Location Guide · Couple Portraits</div>
+      <div class="section-title" style="color:var(--ivory); margin-bottom:0.5rem;">NYC's Most Iconic Backdrops</div>
+      <div class="section-desc" style="margin-bottom:3.5rem;">New York is our studio. Hover each location to see our work there.</div>
+    </div>
+
+    <div class="nyc-layout reveal">
+      <div class="nyc-list">
+        <div class="nyc-loc" data-loc="cp" onmouseenter="showNYC('cp')" onclick="window.open('https://maps.google.com/?q=Central+Park+New+York','_blank')">
+          <div class="nyc-loc-left"><span class="num">01</span><div><h4>Central Park</h4><div class="nyc-sub">Timeless Romance · Bow Bridge · Bethesda</div></div></div>
+          <svg class="nyc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <div class="nyc-loc" data-loc="dumbo" onmouseenter="showNYC('dumbo')" onclick="window.open('https://maps.google.com/?q=DUMBO+Brooklyn+New+York','_blank')">
+          <div class="nyc-loc-left"><span class="num">02</span><div><h4>DUMBO</h4><div class="nyc-sub">Urban Poetry · Cobblestone Streets</div></div></div>
+          <svg class="nyc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <div class="nyc-loc" data-loc="bb" onmouseenter="showNYC('bb')" onclick="window.open('https://maps.google.com/?q=Brooklyn+Bridge+New+York','_blank')">
+          <div class="nyc-loc-left"><span class="num">03</span><div><h4>Brooklyn Bridge</h4><div class="nyc-sub">Iconic Grandeur · Gothic Arches</div></div></div>
+          <svg class="nyc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <div class="nyc-loc" data-loc="sub" onmouseenter="showNYC('sub')" onclick="window.open('https://maps.google.com/?q=Grand+Central+Terminal+Subway+New+York','_blank')">
+          <div class="nyc-loc-left"><span class="num">04</span><div><h4>NYC Subway</h4><div class="nyc-sub">Raw & Real · Underground Soul</div></div></div>
+          <svg class="nyc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <div class="nyc-loc" data-loc="lib" onmouseenter="showNYC('lib')" onclick="window.open('https://maps.google.com/?q=New+York+Public+Library','_blank')">
+          <div class="nyc-loc-left"><span class="num">05</span><div><h4>NYC Public Library</h4><div class="nyc-sub">Literary Elegance · Beaux-Arts</div></div></div>
+          <svg class="nyc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+        <div class="nyc-loc" data-loc="st" onmouseenter="showNYC('st')" onclick="window.open('https://maps.google.com/?q=Times+Square+New+York','_blank')">
+          <div class="nyc-loc-left"><span class="num">06</span><div><h4>NYC Streets</h4><div class="nyc-sub">City as Canvas · Neon & Steam</div></div></div>
+          <svg class="nyc-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </div>
+      </div>
+
+      <div class="nyc-preview">
+        <div class="nyc-preview-img active nyc-cp"><div class="preview-bg"></div><div class="nyc-preview-info"><h5>Central Park</h5><div class="tag-line">Best · Golden Hour · Spring & Autumn</div><a href="https://maps.google.com/?q=Central+Park+New+York" target="_blank" class="nyc-maps-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Maps</a></div></div>
+        <div class="nyc-preview-img nyc-dumbo"><div class="preview-bg"></div><div class="nyc-preview-info"><h5>DUMBO</h5><div class="tag-line">Best · Sunrise · Blue Hour</div><a href="https://maps.google.com/?q=DUMBO+Brooklyn+New+York" target="_blank" class="nyc-maps-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Maps</a></div></div>
+        <div class="nyc-preview-img nyc-bb"><div class="preview-bg"></div><div class="nyc-preview-info"><h5>Brooklyn Bridge</h5><div class="tag-line">Best · Early Morning · Sunset</div><a href="https://maps.google.com/?q=Brooklyn+Bridge+New+York" target="_blank" class="nyc-maps-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Maps</a></div></div>
+        <div class="nyc-preview-img nyc-sub"><div class="preview-bg"></div><div class="nyc-preview-info"><h5>NYC Subway</h5><div class="tag-line">Best · Off-Peak Hours · Any Season</div><a href="https://maps.google.com/?q=Grand+Central+Terminal+Subway+New+York" target="_blank" class="nyc-maps-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Maps</a></div></div>
+        <div class="nyc-preview-img nyc-lib"><div class="preview-bg"></div><div class="nyc-preview-info"><h5>NYC Public Library</h5><div class="tag-line">Best · Weekdays · Soft Light</div><a href="https://maps.google.com/?q=New+York+Public+Library" target="_blank" class="nyc-maps-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Maps</a></div></div>
+        <div class="nyc-preview-img nyc-st"><div class="preview-bg"></div><div class="nyc-preview-info"><h5>NYC Streets</h5><div class="tag-line">Best · Blue Hour · Rainy Evenings</div><a href="https://maps.google.com/?q=Times+Square+New+York" target="_blank" class="nyc-maps-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Open in Maps</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ ABOUT ════════════════════ -->
+<section class="section section-warm" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal"></div>
+      <div class="about-text reveal">
+        <div class="section-tag">Our Story</div>
+        <div class="section-title">Where Every Click Reveals<br>the Artistry of Love</div>
+        <p>We don't just take photographs — we hunt for the light that lives between two people. That stolen glance during the pheras. The nervous laugh before a first look. The quiet exhale when a mother holds her belly and imagines the future.</p>
+        <p>Aakaara Studios was born from a simple truth: love is the most beautiful thing in the world, and it deserves to be captured with reverence. Based in New York City with roots running deep into South Indian heritage, we bring a perspective that honors both tradition and the electric energy of the city.</p>
+        <p>Our name comes from the ancient Sanskrit word meaning "shape" and "form" — because that's what we do: we give shape to your most fleeting, most precious emotions and transform them into art you can hold forever.</p>
+        <div class="about-sanskrit">
+          <span class="telugu">ఆకారం</span> <span style="color:rgba(30,26,22,0.15)">·</span>
+          <span class="devnag">आकार</span> <span style="color:rgba(30,26,22,0.15)">·</span>
+          <span class="english">Giving Shape to What You Feel</span>
+        </div>
+        <div class="about-stats">
+          <div class="stat"><h4>200+</h4><p>Stories captured</p></div>
+          <div class="stat"><h4>4</h4><p>Years of craft</p></div>
+          <div class="stat"><h4>5</h4><p>Countries</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ SERVICES ════════════════════ -->
+<section class="section" id="services">
+  <div class="container reveal">
+    <div class="section-tag">What We Offer</div>
+    <div class="section-title">Services</div>
+    <div class="section-desc">Every story deserves its own canvas. Choose a service that fits your moment, or let us create something custom just for you.</div>
+    <div class="services-grid">
+      <!-- Weddings — Indian wedding icon -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="32" r="8" stroke="#c9956b" stroke-width="1.2" opacity="0.5"/>
+            <path d="M20 32c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="#c9956b" stroke-width="1.2"/>
+            <path d="M28 12l-2 4h4l-2-4z" fill="#c9956b" opacity="0.6"/>
+            <path d="M18 20c3-4 7-6 10-6s7 2 10 6" stroke="#c9956b" stroke-width="1" opacity="0.7"/>
+            <path d="M16 22c4-5 8-7 12-7s8 2 12 7" stroke="#c9956b" stroke-width="0.8" opacity="0.4"/>
+            <circle cx="28" cy="16" r="2" fill="#c9956b" opacity="0.5"/>
+            <path d="M24 18l4-3 4 3" stroke="#c9956b" stroke-width="0.8" opacity="0.6"/>
+            <path d="M22 44c2-4 4-6 6-6s4 2 6 6" stroke="#e8c4a8" stroke-width="0.8" opacity="0.4"/>
+            <path d="M20 46h16" stroke="#c9956b" stroke-width="0.6" opacity="0.3"/>
+          </svg>
+        </div>
+        <h4>Weddings</h4>
+        <p>Full-day coverage of your ceremony, from getting-ready moments to the final dance. Includes second photographer and online gallery.</p>
+      </div>
+      <!-- Couples — holding hands -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 34c0 0-2-6-2-10 0-3 2-5 4-5s4 2 4 5c0-3 2-5 4-5s4 2 4 5" stroke="#c9956b" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M38 34c0 0 2-6 2-10 0-3-2-5-4-5s-4 2-4 5c0-3-2-5-4-5s-4 2-4 5" stroke="#c9956b" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M20 32h16" stroke="#c9956b" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="22" cy="36" r="1" fill="#c9956b" opacity="0.3"/>
+            <circle cx="34" cy="36" r="1" fill="#c9956b" opacity="0.3"/>
+            <path d="M28 28v-4" stroke="#c9956b" stroke-width="0.6" opacity="0.3"/>
+            <circle cx="28" cy="22" r="2" stroke="#c9956b" stroke-width="0.8" opacity="0.3" fill="none"/>
+          </svg>
+        </div>
+        <h4>Couple Portraits</h4>
+        <p>Engagement sessions, pre-wedding shoots, or simply celebrating your love story in iconic NYC locations.</p>
+      </div>
+      <!-- Maternity — lady with bump -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="16" r="4" stroke="#c9956b" stroke-width="1" opacity="0.6"/>
+            <path d="M24 22c0 0-1 6-1 10 0 5 2 8 5 10" stroke="#c9956b" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M32 22c0 0 2 4 3 8 1 4 0 8-2 12" stroke="#c9956b" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+            <ellipse cx="30" cy="32" rx="5" ry="6" stroke="#c9956b" stroke-width="1" opacity="0.4"/>
+            <path d="M26 46h8" stroke="#c9956b" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="30" cy="32" r="1.5" fill="#c9956b" opacity="0.2"/>
+          </svg>
+        </div>
+        <h4>Maternity</h4>
+        <p>Celebrating the beauty of motherhood with intimate, styled sessions in studio or on location.</p>
+      </div>
+      <!-- Celebrations with sub-categories -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 38h16v-4c0-4-3-7-8-7s-8 3-8 7v4z" stroke="#c9956b" stroke-width="1.2" opacity="0.5"/>
+            <path d="M18 38h20" stroke="#c9956b" stroke-width="1.2"/>
+            <path d="M22 27l-2-8" stroke="#c9956b" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/>
+            <path d="M28 25v-10" stroke="#c9956b" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/>
+            <path d="M34 27l2-8" stroke="#c9956b" stroke-width="0.8" opacity="0.5" stroke-linecap="round"/>
+            <circle cx="20" cy="18" r="1.5" fill="#c9956b" opacity="0.3"/>
+            <circle cx="28" cy="14" r="1.5" fill="#c9956b" opacity="0.4"/>
+            <circle cx="36" cy="18" r="1.5" fill="#c9956b" opacity="0.3"/>
+            <path d="M20 42h16" stroke="#c9956b" stroke-width="0.6" opacity="0.2"/>
+          </svg>
+        </div>
+        <h4>Celebrations</h4>
+        <p>The moments that make life extraordinary — captured with joy and artistry.</p>
+        <div class="celebrations-subs">
+          <span>Baby Shower</span><span>Housewarming</span><span>First Birthday</span><span>Sweet Sixteen</span>
+        </div>
+      </div>
+      <!-- Commercial -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="20" width="28" height="20" rx="2" stroke="#c9956b" stroke-width="1.2" opacity="0.6"/>
+            <circle cx="28" cy="30" r="6" stroke="#c9956b" stroke-width="1.2" opacity="0.5"/>
+            <circle cx="28" cy="30" r="2.5" stroke="#c9956b" stroke-width="0.8" opacity="0.3"/>
+            <circle cx="37" cy="24" r="1.5" fill="#c9956b" opacity="0.4"/>
+            <path d="M22 20v-3c0-1 1-2 2-2h8c1 0 2 1 2 2v3" stroke="#c9956b" stroke-width="0.8" opacity="0.4"/>
+          </svg>
+        </div>
+        <h4>Commercial</h4>
+        <p>Product photography, brand campaigns, and editorial content for businesses and creators.</p>
+      </div>
+      <!-- Conceptual -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="28" cy="28" r="12" stroke="#c9956b" stroke-width="0.8" opacity="0.2"/>
+            <path d="M28 16c-2 4-6 8-6 12s3 8 6 12" stroke="#c9956b" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+            <path d="M28 16c2 4 6 8 6 12s-3 8-6 12" stroke="#c9956b" stroke-width="1.2" opacity="0.5" stroke-linecap="round"/>
+            <circle cx="28" cy="28" r="3" stroke="#c9956b" stroke-width="1" opacity="0.6"/>
+            <circle cx="28" cy="28" r="1" fill="#c9956b" opacity="0.5"/>
+            <path d="M16 28h24" stroke="#c9956b" stroke-width="0.5" opacity="0.2"/>
+            <path d="M28 16v24" stroke="#c9956b" stroke-width="0.5" opacity="0.2"/>
+          </svg>
+        </div>
+        <h4>Conceptual</h4>
+        <p>Artistic, concept-driven photography — surreal, editorial, and experimental visual storytelling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ TESTIMONIALS ════════════════════ -->
+<section class="section section-dark" id="testimonials">
+  <div class="container reveal">
+    <div class="section-tag">Kind Words</div>
+    <div class="section-title" style="color:var(--ivory);">What Our Clients Say</div>
+    <div class="section-desc">We don't just take pictures — we build relationships. Here's what some of our favorite humans have to say.</div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <blockquote>"Your testimonial text here — ask your clients to share their experience and paste it here."</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar"></div><div><h5>Client Name</h5><p>Service Type · Location</p></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <blockquote>"Your testimonial text here — ask your clients to share their experience and paste it here."</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar"></div><div><h5>Client Name</h5><p>Service Type · Location</p></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <blockquote>"Your testimonial text here — ask your clients to share their experience and paste it here."</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar"></div><div><h5>Client Name</h5><p>Service Type · Location</p></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <blockquote>"Your testimonial text here — ask your clients to share their experience and paste it here."</blockquote>
+        <div class="testimonial-author"><div class="testimonial-avatar"></div><div><h5>Client Name</h5><p>Service Type · Location</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section class="section" id="contact">
+  <div class="container reveal">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-tag">Get In Touch</div>
+        <h3>Let's Create Something Beautiful Together</h3>
+        <p>Whether you're planning a grand wedding or an intimate portrait session, we'd love to hear your story. Reach out and let's start the conversation.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h5>New York City</h5><p>Available for travel worldwide</p></div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><h5>avala.sudhakar@gmail.com</h5><p>We respond within 24 hours</p></div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><h5>+1 (475) 332-2020</h5><p>Mon–Sat, 10am–7pm EST</p></div>
+          </div>
+          <a href="https://www.instagram.com/sudhakar_3697?igsh=MWxodHZrOWlhcmpzOA%3D%3D&utm_source=qr" target="_blank" class="contact-detail" style="margin-top:0.5rem;">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="var(--rose)"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="var(--rose)" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="var(--rose)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="var(--rose)"/></svg></div>
+            <div><h5>@sudhakar_3697</h5><p>Follow us on Instagram</p></div>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xyzgkqvl" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from aakaarastudiosnyc.com">
+        <div class="form-row">
+          <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Event Type</label>
+            <select name="event_type"><option value="">Select a service</option><option>Wedding</option><option>Couple Portrait</option><option>Maternity</option><option>Baby Shower</option><option>Housewarming</option><option>First Birthday</option><option>Sweet Sixteen</option><option>Commercial</option><option>Conceptual</option><option>Other</option></select>
+          </div>
+          <div class="form-group"><label>Preferred Date</label><input type="date" name="date"></div>
+        </div>
+        <div class="form-group"><label>Tell Us Your Story</label><textarea name="message" placeholder="Share a bit about your vision — we'd love to know what makes your celebration special..."></textarea></div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 140 140" width="45"><g transform="translate(70,70)"><path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#c9956b" stroke-width="1.5" opacity="0.6"/><path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#c9956b" stroke-width="1.5" opacity="0.3" transform="rotate(60)"/><circle cx="0" cy="0" r="4" fill="#c9956b" opacity="0.6"/></g></svg>
+        <p>Giving shape to what you feel. A photography sanctuary where love and art converge, based in New York City.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <a href="#home">Home</a><a href="#portfolio">Portfolio</a><a href="#nyc">NYC Portraits</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">Weddings</a><a href="#services">Couples</a><a href="#services">Maternity</a><a href="#services">Celebrations</a><a href="#services">Commercial</a><a href="#services">Conceptual</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="https://www.instagram.com/sudhakar_3697?igsh=MWxodHZrOWlhcmpzOA%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+        <a href="mailto:avala.sudhakar@gmail.com">Email Us</a>
+        <a href="tel:+14753322020">Call Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aakaara Studios NYC · Crafting Love Into Art</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/sudhakar_3697?igsh=MWxodHZrOWlhcmpzOA%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════ SCRIPTS ════════════════════ -->
+<script>
+// Reveal on scroll
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => obs.observe(el));
+
+// NYC skyline reveal
+const nycSection = document.getElementById('nyc');
+const nycObs = new IntersectionObserver(([e]) => {
+  if (e.isIntersecting) nycSection.classList.add('visible');
+  else nycSection.classList.remove('visible');
+}, { threshold: 0.1 });
+nycObs.observe(nycSection);
+
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Portfolio filter
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.portfolio-filters button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = ''; item.style.animation = 'fadeIn 0.5s ease both';
+    } else { item.style.display = 'none'; }
+  });
+}
+
+// NYC preview on hover
+function showNYC(loc) {
+  document.querySelectorAll('.nyc-preview-img').forEach(el => el.classList.remove('active'));
+  const target = document.querySelector('.nyc-' + loc);
+  if (target) target.classList.add('active');
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.nav-links').classList.remove('show');
+  });
+});
+</script>
+</body>
+</html>

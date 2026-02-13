@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" width="900" height="340">
+  <title>Aakaara Studios NYC — Bindu — Horizontal Light</title>
+  <rect width="900" height="340" fill="#faf6f1"/>
+  <g transform="translate(200,170)">
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#1e1a16" stroke-width="0.7" opacity="0.1"/>
+    <path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#1e1a16" stroke-width="1.8" opacity="0.75"/>
+    <path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#1e1a16" stroke-width="1.8" opacity="0.48" transform="rotate(60)"/>
+    <path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#1e1a16" stroke-width="1.8" opacity="0.3" transform="rotate(120)"/>
+    <path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#1e1a16" stroke-width="1.8" opacity="0.18" transform="rotate(180)"/>
+    <path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#1e1a16" stroke-width="1.8" opacity="0.1" transform="rotate(240)"/>
+    <path d="M0,-52 C15,-52 27,-35 22,-10 C17,15 -7,22 -22,10 C-37,-2 -27,-38 -10,-50 C-6,-51.5 -3,-52 0,-52Z" fill="none" stroke="#1e1a16" stroke-width="1.8" opacity="0.06" transform="rotate(300)"/>
+    <circle cx="0" cy="0" r="5" fill="#1e1a16" opacity="0.85"/>
+  </g>
+  <text x="320" y="155" font-family="'Cormorant Garamond','Garamond','Georgia',serif" font-weight="300" font-size="66" fill="#1e1a16" letter-spacing="14">Aakaara</text>
+  <circle cx="340" cy="96" r="4" fill="#7a3b4e" opacity="0.8"/>
+  <text x="324" y="185" font-family="'Outfit','Helvetica Neue',sans-serif" font-weight="300" font-size="11" fill="#1e1a16" letter-spacing="8" opacity="0.4">STUDIOS  ·  NEW YORK CITY</text>
+  <line x1="324" y1="200" x2="520" y2="200" stroke="#1e1a16" stroke-width="0.5" opacity="0.1"/>
+  <text x="324" y="218" font-family="'Cormorant Garamond','Garamond',serif" font-weight="400" font-style="italic" font-size="14" fill="#7a3b4e" letter-spacing="2" opacity="0.6">Crafting Love Into Art</text>
+</svg>
