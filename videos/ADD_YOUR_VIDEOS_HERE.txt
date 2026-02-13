@@ -1,0 +1,6 @@
+Add your showreel/hero video here:
+
+showreel.mp4        → Hero background video (optional)
+
+Note: Keep videos under 50MB for fast loading.
+Consider hosting large videos on Vimeo and embedding instead.

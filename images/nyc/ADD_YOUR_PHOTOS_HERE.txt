@@ -1,0 +1,10 @@
+Add your NYC location photos here with these exact filenames:
+
+central-park.jpg    → Central Park preview
+dumbo.jpg           → DUMBO Brooklyn preview
+brooklyn-bridge.jpg → Brooklyn Bridge preview
+subway.jpg          → NYC Subway preview
+library.jpg         → NYC Public Library preview
+staten-island.jpg   → Staten Island Ferry preview
+
+Recommended: JPG format, landscape orientation, 1200px wide minimum

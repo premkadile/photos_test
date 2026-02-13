@@ -1,0 +1,5 @@
+Add your about/profile photo here:
+
+photographer.jpg    → Your portrait photo for the About section
+
+Recommended: JPG format, portrait orientation, 800px wide minimum

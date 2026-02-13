@@ -1,0 +1,12 @@
+Add your portfolio photos here with these exact filenames:
+
+wedding-1.jpg       → Priya & Arjun (wide, wedding)
+couple-1.jpg        → Maya & James (couple portrait)
+maternity-1.jpg     → Anjali (maternity)
+celebration-1.jpg   → The Sharma Family (baby shower)
+wedding-2.jpg       → Lakshmi & Dev (wedding)
+conceptual-1.jpg    → Ethereal (conceptual, wide)
+commercial-1.jpg    → Lumina Jewelry (commercial)
+couple-2.jpg        → Sarah & Vikram (pre-wedding)
+
+Recommended: JPG format, 1200px wide minimum, compressed for web (under 500KB each)
